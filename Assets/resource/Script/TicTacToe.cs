@@ -28,7 +28,6 @@ public class TicTacToe : MonoBehaviour
 
     Tcp tcp;
     public InputField ip;
-
     public Texture texBoard;
     public Texture texWhite;
     public Texture texBlack;
@@ -43,7 +42,6 @@ public class TicTacToe : MonoBehaviour
     // 배열로 선언하면 크기를 변경하기 위해 코드를 일일히 수정해야함
 
     State state;
-
     Stone stoneTurn;
     Stone stoneI;
     Stone stoneYou;
@@ -74,9 +72,9 @@ public class TicTacToe : MonoBehaviour
     {
         if (!tcp.IsConnect()) return;
 
-        if(state == State.Start)
+        if (state == State.Start)
             UpdateStart();
-        DisableUIButtons();
+            DisableUIButtons();
 
         if (state == State.Game)
             UpdateGame();
@@ -288,9 +286,7 @@ public class TicTacToe : MonoBehaviour
 
     void DisableUIButtons()
     {
-        // 여기에 UI 버튼을 비활성화하는 코드를 작성하십시오.
-        // 예를 들어, 게임 오브젝트를 찾아서 비활성화할 수 있습니다.
-        // 이 예제에서는 "Button" 태그가 지정된 모든 게임 오브젝트를 비활성화합니다.
+        // "Button" 태그가 지정된 모든 게임 오브젝트를 비활성화합니다.
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
         
         foreach (GameObject button in buttons)
